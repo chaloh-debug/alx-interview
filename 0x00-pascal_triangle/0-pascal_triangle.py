@@ -17,6 +17,7 @@ def pascal_triangle(n):
 pascal_triangle(5)
 """
 
+
 def pascal_triangle(n):
     """ Pascal triangle using binomial coefficients """
     all = []
@@ -24,8 +25,8 @@ def pascal_triangle(n):
         return []
     else:
         for i in range(n):
-            row = [1] #initialize the row with 1
+            row = [1]  # initialize the row with 1
             for j in range(i):
-                row.append(row[j] * (i - j) // (j + 1))  #binomial coefficient
-            all.append(row) #append the row to the triangle
-        return all #return the triangle
+                row.append(row[j] * (i - j) // (j + 1))  # binomial coefficient
+            all.append(row)  # append the row to the triangle
+        return all  # return the triangle
