@@ -4,8 +4,6 @@
 
 def canUnlockAll(boxes):
     """ determines if all the boxes can be opened. """
-    if len(boxes) == 0:
-        return False
     temp_keys = [0]
 
     for key in temp_keys:
