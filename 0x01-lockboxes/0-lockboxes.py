@@ -1,19 +1,20 @@
 #!/usr/bin/python3
 """ Lockboxes """
+
+
 def canUnlockAll(boxes):
-    """ Lockboxes """
-    if len(boxes) == 0 or boxes is None:
+    """ determines if all the boxes can be opened. """
+    if len(boxes) == 0:
         return False
     temp_keys = [0]
 
-    for box in range(len(boxes)):
-        for key in boxes[box]:
-            if key not in temp_keys:
-                temp_keys.append(key)
-            else:
-                continue
-        temp_keys.sort()
+    for key in temp_keys:
+        for box in boxes[key]:
+            if box not in temp_keys:
+                temp_keys.append(box)
     print(temp_keys)
     if len(temp_keys) == len(boxes):
         return True
-    return False
+    else:
+        return False
+        
