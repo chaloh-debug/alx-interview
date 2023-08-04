@@ -12,7 +12,6 @@ def canUnlockAll(boxes):
         for box in boxes[key]:
             if box not in temp_keys:
                 temp_keys.append(box)
-    print(temp_keys)
     if len(temp_keys) == len(boxes):
         return True
     else:
