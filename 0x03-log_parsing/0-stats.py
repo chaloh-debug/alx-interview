@@ -16,7 +16,8 @@ def extract_data(line):
         'status_code': 0,
         'file_size': 0,
     }
-    log_fmt = '{}\\-{}{}{}{}\\s*'.format(exps[0], exps[1], exps[2], exps[3], exps[4])
+    log_fmt = '{}\\-{}{}{}{}\\s*'.format(exps[0], exps[1],
+                                         exps[2], exps[3], exps[4])
     data_match = re.fullmatch(log_fmt, line)
     if data_match is not None:
         status_code = data_match.group('status_code')
