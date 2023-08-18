@@ -24,7 +24,7 @@ def extract_data(line):
         file_size = int(data_match.group('file_size'))
         info['status_code'] = status_code
         info['file_size'] = file_size
-    #print(info)
+    # print(info)
     return info
 
 
