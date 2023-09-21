@@ -1,23 +1,32 @@
 #!/usr/bin/python3
+""" Least amount of Coins needed
+"""
 
-# check list
 # sort list
-# check totals
-# check largest denomination is less than total
+# set coins counter
+# set list index increment
+# check coin is less than total
 # remainder = total - val
 # recurse through if newTotal not equal to total
-# remainder
+# return count
+
 
 def makeChange(coins, total):
-    coins.sort(reverse=1)
-
+    """ Determines least amount of coins needed to meet a given amount.
+    """
+    temp = total
+    coins.sort(reverse=1)  # sort from largest
+    count = 0
     if total < 1:
         return 0
-    for i in coins:
-        if i < total:
-            remainder = total - i
-            print(remainder)
-
-    print(coins)
-
-makeChange([1, 2, 25], 37)
+    n = len(coins)
+    idx = 0  # coins index
+    while temp > 0:
+        if idx >= n:
+            return -1
+        if temp - coins[idx] >= 0:
+            temp -= coins[idx]
+            count += 1
+        else:
+            idx += 1
+    return count
